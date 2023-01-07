@@ -1,0 +1,90 @@
+<html>
+<head>
+    <title>
+        search
+    </title>
+</head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<style>
+table{
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+ td,  th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+tr:nth-child(even){background-color: #f2f2f2;}
+ tr:hover {background-color: #ddd;}
+
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+
+</style>
+<body>
+<center><h1>SEARCH DONOR HERE</h1></center>
+<br>
+<form action="/search" method="POST">
+    <div class="select1" >
+    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example"name="bloodgroup" type="search">
+    <option value="Course">BloodGroup</option>
+    <option value="A+">A+</option>
+    <option value="A-">A-</option>
+    <option value="B+">B+</option>
+    <option value="B-">B-</option>
+    <option value="O+">O+</option>
+    <option value="O-">O-</option>
+    <option value="AB+">AB+</option>
+    <option value="AB-">AB-</option>
+    </select>
+        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="city" type="search">
+            <option value="Course">CITY</option>
+  <option value="kanyakumari">kanyakumari</option>
+  <option value="Chennai">Chennai</option>
+  <option value="tirunelveli">Tirunelveli</option>
+
+  </select>
+         <center> <button  class="btn btn-primary btn-lg">search</button></center>
+    </div>
+    </form>
+<div class="div1">
+    <table>
+    <tr>
+        <th>NAME</th>
+        <th>AGE</th>
+        <th>BLOOD GROUP</th>
+        <th>GENDER</th>
+        <th>CITY</th>
+        <th>CONTACT NUMBER</th>
+        <th>ALTERNATIVE NUMBER</th>
+        <th>WHATS APP NUMBER</th>
+        <th>LOCATION</th>
+        <th>COVID STATUS</th>
+        <th>ACCOUNT TYPE</th>
+    </tr>
+{%for x in posts%}
+  <tr> <td> {{x.name}}</td>
+   <td> {{x.age}}</td>
+    <td>{{x.bloodgroup}}</td>
+   <td>{{x.gender}}</td>
+    <td>{{x.city}}</td>
+    <td><a href="tel:{{x.contactnumber}}">{{x.contactnumber}}</a></td>
+    <td><a href="tel:{{x.alternativenumber}}">{{x.alternativenumber}}</a></td>
+    <td><a href=https://wa.me/+91{{x.whatsappnumber}}?text=HI%20I%20AM%20IN%20NEED%20OF%20BLOOD%20URGENTLY%20 target="blank">{{x.whatsappnumber}}</a></td>
+    <td><a href={{x.location}} target="blank">DONOR'S LOCATION</a></td>
+      <td> {{x.covidstatus}}</td>
+  <td> {{x.verified}}</td></tr>
+{%endfor%}
+
+        </table>
+</div>
+</body>
+</html>

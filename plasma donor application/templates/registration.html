@@ -1,0 +1,152 @@
+<html>  
+    <head>   
+    <title>   Registration Page </title>  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    </head>
+    <style>
+        body{
+background-color: white;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: whitesmoke;
+  }
+  .div1 {
+    border: 5px outset red;
+    background-color: lightblue;
+    text-align: center;
+  }
+    </style>
+        <body>
+      <div class="div1">
+      <center>
+      <h1>DONOR REGISTRATION FORM</h1>
+    </center>
+  </div>
+    <br>  
+    <br> {{res}}
+    <div class="container col-5">
+    <form action="/donor" method="POST">
+    <table class="table table-borderless">
+    <label> NAME : </label>
+      <input type="text" name="name" size="40"/><br><br>
+
+
+    <label> AGE : </label>     
+    <input type="text" name="age" size="40"/><br><br>
+    <label>  
+      </label> 
+    BLOOD GROUP :  
+    </label>   
+    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="bloodgroup">
+    <option value="Course">BloodGroup</option>  
+    <option value="A+">A+</option>  
+    <option value="A-">A-</option>  
+    <option value="B+">B+</option>  
+    <option value="B-">B-</option>
+    <option value="O+">O+</option> 
+    <option value="O-">O-</option>  
+    <option value="AB+">AB+</option>  
+    <option value="AB-">AB-</option>  
+    </select>    
+    <br>  
+    <br> 
+<label>   
+GENDER :  
+</label>   
+<select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="gender">
+<option value="Course">Gender</option> 
+ <option value="Male" >Male</option>
+ <option value="female">Female</option>
+ <option value="others">Others</option>
+</select>    
+<br>  
+<br> 
+<label> CONTACT NUMBER : </label>         
+<input type="text" name="contactnumber" size="40"/><br><br> 
+<label> ALTERNATIVE NUMBER : </label>         
+<input type="text" name="alternativenumber" size="40"/><br><br>      
+<label> WHATS-APP NUMBER : </label>         
+<input type="text" name="whatsappnumber" size="40"/><br><br>   
+<label> E-MAIL : </label>         
+<input type="text" name="email" size="40"/><br><br>
+<label for="basic-url" class="form-label" >LOCATION (copy and paste your home location link):</label>
+  <span class="input-group-text"><a href="https://maps.google.com/"  target="_blank">https://maps.google.com/</a></span>
+  <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3" name="location"><br><br>
+<label> ADDRESS : </label>         
+<input type="text" name="address" size="40"/><br><br>
+<label> STATE : </label>
+<select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="state">
+  <option value="tamilnadu">TamilNadu</option> 
+  </select> 
+<br>
+<br>
+<label> CITY : </label>
+<select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="city">
+  <option value="kanyakumari">kanyakumari</option> 
+  <option value="Chennai">Chennai</option>
+  <option value="tirunelveli">Tirunelveli</option>
+
+  </select> 
+<br>
+<br>
+<label> OCCUPATION : </label>         
+<input type="text" name="occupation" size="40" name="occupation"/><br><br>
+<label>   
+    COVID-STATUS :  
+    </label>   
+    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="covidstatus">
+    <option value="Course">status</option> 
+     <option value="infected once" >infected once</option>
+     <option value="infected twice">infected more than once</option>
+     <option value="uninfected">uninfected</option>
+    </select>    
+    <br>  
+    <br> 
+    <label>   
+      COVID VACCINATION STATUS :  
+      </label>   
+      <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="covidvaccinationstatus">
+      <option value="shield">Covi-Shield</option> 
+       <option value="covaxin" >Co-Vaxin</option>
+      </select>    
+      <br>  
+      <br>
+      <label>   
+        COVID VACCINATION DOSE :  
+        </label>   
+        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="covidvaccinationdose">
+        <option value="d1">Dose-1</option> 
+         <option value="d2" >Dose-2</option>
+         <option value="booster" >Booster</option>
+        </select>    
+        <br>  
+        <br>
+    <label>   
+        ARE YOU DRUG USER ? :  
+        </label>   
+        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="druguser">
+        <option value="Course">status</option> 
+         <option value="yes" >YES</option>
+         <option value="no">NO</option>
+          </select>
+        <br>
+    </br> 
+    <label> HEALTH ISSUES (mention your health issues) : </label> 
+    <br>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="comments">
+      Enter health issues here...</textarea> 
+      <br>
+      <br>
+    </table>
+    <center><input type="submit" value ="REGISTER"></center>
+</form>  
+</div> 
+</body>  
+</html>  

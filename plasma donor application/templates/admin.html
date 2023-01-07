@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>adminpage</title>
+    <style>
+    table{
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+ td,  th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+tr:nth-child(even){background-color: #f2f2f2;}
+ tr:hover {background-color: #ddd;}
+
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+    </style>
+</head>
+<body>
+<center><h1>ADMIN PANEL</h1></center>
+<form action="/admin" method="POST">
+    <table>
+    <tr>
+        <th>NAME</th>
+        <th>AGE</th>
+        <th>BLOOD GROUP</th>
+        <th>GENDER</th>
+        <th>CONTACT NUMBER</th>
+        <th>ALTERNATIVE NUMBER</th>
+        <th>WHATS APP NUMBER</th>
+        <th>E-MAIL</th>
+        <th>LOCATION</th>
+        <th>ADDRESS</th>
+        <th>STATE</th>
+        <th>CITY</th>
+        <th>OCCUPATION</th>
+        <th>COVID STATUS</th>
+        <th>COVID-VACCINATION</th>
+        <th>COVID-DOSAGE</th>
+        <th>DRUG USER</th>
+        <th>HEALTH ISSUES</th>
+        <th>ACCOUNT TYPE</th>
+        <th>DELETE</th>
+        <th>VERIFIED ACCESS</th>
+    </tr>
+     </tr>
+{%for x in posts%}
+  <tr> <td> {{x.name}}</td>
+   <td> {{x.age}}</td>
+    <td>{{x.bloodgroup}}</td>
+   <td>{{x.gender}}</td>
+    <td>{{x.contactnumber}}</td>
+    <td>{{x.alternativenumber}}</td>
+    <td>{{x.whatsappnumber}}</td>
+      <td>{{x.email}}</td>
+    <td>{{x.location}}</td>
+      <td>{{x.address}}</td>
+      <td>{{x.state}}</td>
+      <td>{{x.city}}</td>
+      <td>{{x.occupation}}</td>
+      <td>{{x.covidstatus}}</td>
+        <td>{{x.covidvaccinationstatus}}</td>
+        <td>{{x.covidvaccinationdose}}</td>
+        <td>{{x.druguser}}</td>
+      <td>{{x.comments}}</td>
+      <td>{{x.verified}}</td>
+  <td>
+      <form action="/deleteform" method="POST">
+          <button input type="hidden" value="{{x.id}}" name="id">delete</button>
+      </form>
+  </td>
+    <td>
+      <form action="/updateform" method="POST">
+          <button input type="hidden" value="{{x.id}}" name="id">verified</button>
+      </form>
+  </td></tr>
+{%endfor%}
+</table>
+</form>
+</body>
+</html>

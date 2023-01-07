@@ -1,0 +1,17 @@
+body{
+background-color: white;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: whitesmoke;
+  }
+  .div1 {
+    border: 5px outset red;
+    background-color: lightblue;    
+    text-align: center;
+  }
